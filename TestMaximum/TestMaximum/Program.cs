@@ -28,9 +28,19 @@
             double[] arr1 = { 1.0, 3.5, 40.0, 6.9, 0.8 };
             string[] arr2 = { "39", "29", "38", "32", "98" };
 
-            Console.WriteLine(new GenericMaximum<int>(arr).MaxMethod());
-            Console.WriteLine(new GenericMaximum<double>(arr1).MaxMethod());
-            Console.WriteLine(new GenericMaximum<string>(arr2).MaxMethod());
+            GenericMaximum<int> gen1 =  new GenericMaximum<int>(arr);
+            gen1.ToPrint();
+
+            GenericMaximum<double> gen2 =  new GenericMaximum<double>(arr1);
+            gen2.ToPrint();
+
+            GenericMaximum<string> gen3 =  new GenericMaximum<string>(arr2);
+            gen3.ToPrint();
+
+
+
+
+
         }
     }
 }

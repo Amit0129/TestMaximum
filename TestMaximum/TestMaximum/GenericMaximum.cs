@@ -31,6 +31,11 @@ namespace TestMaximum_
             var max = MaxValue(this.values);
             return max;
         }
+        public void ToPrint()
+        {
+            var maximun = MaxValue(this.values);
+            Console.WriteLine($"Maximum Value is: {maximun}");
+        }
         
     }
 }
