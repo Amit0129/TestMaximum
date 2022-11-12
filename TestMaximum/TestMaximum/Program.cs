@@ -7,6 +7,7 @@
             Console.WriteLine("Maximum Test Program");
 
             Console.WriteLine(MaximumNumberCheck.MaximumIntegerNumber(30, 30, 30));
+            Console.WriteLine(MaximumNumberCheck.MaximumFloatsNumber(30.4, 30.8, 30.9));
             
         }
     }
