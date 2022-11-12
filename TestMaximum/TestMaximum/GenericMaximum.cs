@@ -8,42 +8,29 @@ namespace TestMaximum_
 {
     public class GenericMaximum<T> where T : IComparable
     {
-        private T firstValue;
-        private T secondValue;
-        private T thirdValue;
+        public T[] values;
 
 
-        public GenericMaximum(T firstValue, T secondValue, T thirdValue)
+        public GenericMaximum(T[] values)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.values = values;
+            
         }
-        public T GetMaximun()
+        public T[] Sort(T[] values)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                thirdValue.CompareTo(secondValue) >= 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) >= 0)
-            {
-                return thirdValue;
-            }
-            return firstValue;
+            Array.Sort(values);
+            return values;
         }
-        /*public T MaxMethod()
+        public T MaxValue(params T[] values)
         {
-            var max = GenericMaximum();
-        }*/
+            var sorted_Value = Sort(values);
+            return sorted_Value[^1];
+        }
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.values);
+            return max;
+        }
+        
     }
 }
